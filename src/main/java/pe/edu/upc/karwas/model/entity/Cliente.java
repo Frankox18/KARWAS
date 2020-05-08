@@ -1,5 +1,7 @@
 package pe.edu.upc.karwas.model.entity;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,6 +20,14 @@ public class Cliente {
 	@Column(name = "contraseña", length = 30, nullable = false)
 	private String contraseña;
 	
+	private List<Auto> auto;
+	
+	public List<Auto> getAuto() {
+		return auto;
+	}
+	public void setAuto(List<Auto> auto) {
+		this.auto = auto;
+	}
 	public Integer getId() {
 		return id;
 	}

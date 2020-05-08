@@ -1,5 +1,7 @@
 package pe.edu.upc.karwas.model.entity;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,6 +20,14 @@ public class Sucursal {
 	@Column(name = "direccion", length = 30, nullable = false)
 	private String direccion;
 	
+	private List<Anuncio> anuncio;
+	
+	public List<Anuncio> getAnuncio() {
+		return anuncio;
+	}
+	public void setAnuncio(List<Anuncio> anuncio) {
+		this.anuncio = anuncio;
+	}
 	public Integer getId() {
 		return id;
 	}

@@ -1,5 +1,7 @@
 package pe.edu.upc.karwas.model.entity;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,6 +21,14 @@ public class Empresa {
 	private Long ruc;
 	public Integer getId() {
 		return id;
+	}
+	private List<Sucursal> sucursal;
+	
+	public List<Sucursal> getSucursal() {
+		return sucursal;
+	}
+	public void setSucursal(List<Sucursal> sucursal) {
+		this.sucursal = sucursal;
 	}
 	public void setId(Integer id) {
 		this.id = id;
