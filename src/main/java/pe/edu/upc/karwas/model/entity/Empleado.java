@@ -1,37 +1,57 @@
 package pe.edu.upc.karwas.model.entity;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 @Entity
+@PrimaryKeyJoinColumn(name = "emp_persona")
 @Table(name="empleados")
-public class Empleado {
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
-		
+public class Empleado extends Persona {
+			
 	@Column(name = "codigoEmpleado", length = 10, nullable = false)
-	private Integer codigoEmpleado;
+	private long codigoEmpleado;
 
-	public Integer getId() {
-		return id;
-	}
+	@ManyToMany
+	@JoinTable(name="empleado_sucursal", 
+		joinColumns = { @JoinColumn(name = "empleado_id", referencedColumnName = "id") }, 
+		inverseJoinColumns = { @JoinColumn(name = "sucursal_id", referencedColumnName = "id") } )
+	private List<Sucursal> sucursales;
+	
+	@OneToMany(mappedBy = "empleado", fetch = FetchType.LAZY)
+	private List<Lavado> lavados; 
+	
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-	public Integer getCodigoEmpleado() {
+	public long getCodigoEmpleado() {
 		return codigoEmpleado;
 	}
 
-	public void setCodigoEmpleado(Integer codigoEmpleado) {
+	public void setCodigoEmpleado(long codigoEmpleado) {
 		this.codigoEmpleado = codigoEmpleado;
+	}
+
+	public List<Sucursal> getSucursales() {
+		return sucursales;
+	}
+
+	public void setSucursales(List<Sucursal> sucursales) {
+		this.sucursales = sucursales;
+	}
+
+	public List<Lavado> getLavados() {
+		return lavados;
+	}
+
+	public void setLavados(List<Lavado> lavados) {
+		this.lavados = lavados;
 	}
 	
 }

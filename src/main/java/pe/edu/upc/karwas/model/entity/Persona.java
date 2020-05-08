@@ -1,17 +1,19 @@
 package pe.edu.upc.karwas.model.entity;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 @Table(name="personas")
 public class Persona {
 	@Id
@@ -36,11 +38,9 @@ public class Persona {
 	@Column(name="direccion", length=40, nullable=false)
 	private String direccion;
 	
-	private List<Empleado> empleado;
-	
-	public Persona() {
-		empleado = new ArrayList<>();
-	}
+	@OneToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "usuario_id")
+	private Usuario usuario;
 
 	public Integer getId() {
 		return id;
@@ -98,14 +98,4 @@ public class Persona {
 		this.direccion = direccion;
 	}
 
-	public List<Empleado> getEmpleado() {
-		return empleado;
-	}
-
-	public void setEmpleado(List<Empleado> empleado) {
-		this.empleado = empleado;
-	}
-
-	
-	
 }
