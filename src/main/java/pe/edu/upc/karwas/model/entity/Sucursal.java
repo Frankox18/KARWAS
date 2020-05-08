@@ -1,5 +1,6 @@
 package pe.edu.upc.karwas.model.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -37,6 +38,11 @@ public class Sucursal {
 
     @ManyToMany(mappedBy = "sucursales")
     private List<Empleado> empleados;
+    
+    public Sucursal() {
+    	anuncios = new ArrayList<>();
+    	empleados = new ArrayList<>();
+    }
     
     public Integer getId() {
         return id;

@@ -1,5 +1,6 @@
 package pe.edu.upc.karwas.model.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -29,13 +30,9 @@ public class Empleado extends Persona {
 	@OneToMany(mappedBy = "empleado", fetch = FetchType.LAZY)
 	private List<Lavado> lavados; 
 	
-
-	public long getCodigoEmpleado() {
-		return codigoEmpleado;
-	}
-
-	public void setCodigoEmpleado(long codigoEmpleado) {
-		this.codigoEmpleado = codigoEmpleado;
+	public Empleado() {
+		sucursales = new ArrayList<>();
+		lavados = new ArrayList<>();
 	}
 
 	public List<Sucursal> getSucursales() {
@@ -52,6 +49,13 @@ public class Empleado extends Persona {
 
 	public void setLavados(List<Lavado> lavados) {
 		this.lavados = lavados;
+	}
+	public long getCodigoEmpleado() {
+		return codigoEmpleado;
+	}
+
+	public void setCodigoEmpleado(long codigoEmpleado) {
+		this.codigoEmpleado = codigoEmpleado;
 	}
 	
 }

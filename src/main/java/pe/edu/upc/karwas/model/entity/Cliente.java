@@ -1,5 +1,6 @@
 package pe.edu.upc.karwas.model.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -16,6 +17,9 @@ public class Cliente extends Persona {
     @OneToMany(mappedBy = "cliente", fetch = FetchType.LAZY)
     private List<Auto> autos;
     
+    public Cliente() {
+    	autos = new ArrayList<>();
+    }
 	public List<Auto> getAutos() {
 		return autos;
 	}

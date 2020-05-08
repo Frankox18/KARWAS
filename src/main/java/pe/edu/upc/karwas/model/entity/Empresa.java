@@ -1,5 +1,6 @@
 package pe.edu.upc.karwas.model.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -28,6 +29,9 @@ public class Empresa {
 	@OneToMany(mappedBy = "empresa", fetch = FetchType.LAZY)
     private List<Sucursal> sucursal;
 
+	public Empresa() {
+		sucursal = new ArrayList<>();
+	}
     
     public Integer getId() {
         return id;
