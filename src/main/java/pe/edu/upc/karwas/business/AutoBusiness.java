@@ -6,6 +6,6 @@ import java.util.Optional;
 import pe.edu.upc.karwas.model.entity.Auto;
 
 public interface AutoBusiness extends CrudBusiness<Auto, Integer>{
-       Optional<Auto> readByPlaca(String placa) throws Exception;
-       List<Auto> readByModelo(String modelo) throws Exception;
+	List<Auto> readByMarca(String marca) throws Exception;
+	List<Auto> readByModelo( String modelo ) throws Exception;
 }

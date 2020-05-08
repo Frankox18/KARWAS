@@ -6,7 +6,6 @@ import java.util.Optional;
 import pe.edu.upc.karwas.model.entity.Persona;
 
 public interface PersonaBusiness extends CrudBusiness<Persona, Integer> {
-	Optional<Persona> readByDni(String dni) throws Exception;
-
-	List<Persona> readByApellido(String apellido) throws Exception;
+	List<Persona>readByApellido(String apellido) throws Exception;
+	List<Persona>readByDni(String dni) throws Exception;
 }
