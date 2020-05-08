@@ -8,30 +8,32 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="empleados")
-public class Empleado {
-	
+@Table(name = "empresas")
+public class Empresa {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-		
-	@Column(name = "codigoEmpleado", length = 10, nullable = false)
-	private Integer codigoEmpleado;
-
+	@Column(name = "nombre", length = 30, nullable = false)
+	private String nombre;
+	@Column(name = "ruc", length = 30, nullable = false)
+	private Long ruc;
 	public Integer getId() {
 		return id;
 	}
-
 	public void setId(Integer id) {
 		this.id = id;
 	}
-
-	public Integer getCodigoEmpleado() {
-		return codigoEmpleado;
+	public String getNombre() {
+		return nombre;
 	}
-
-	public void setCodigoEmpleado(Integer codigoEmpleado) {
-		this.codigoEmpleado = codigoEmpleado;
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	public Long getRuc() {
+		return ruc;
+	}
+	public void setRuc(Long ruc) {
+		this.ruc = ruc;
 	}
 	
 }

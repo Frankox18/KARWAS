@@ -6,8 +6,14 @@
 
 	<persistence-unit name="KarwasPU" transaction-type="JTA">
 		<jta-data-source>java:/</jta-data-source>
-		<class>pe.edu.upc.karwas.model.entity.Person</class>
+		<class>pe.edu.upc.karwas.model.entity.Anuncio</class>
+		<class>pe.edu.upc.karwas.model.entity.Auto</class>
+		<class>pe.edu.upc.karwas.model.entity.Cliente</class>
 		<class>pe.edu.upc.karwas.model.entity.Empleado</class>
+		<class>pe.edu.upc.karwas.model.entity.Empresa</class>
+		<class>pe.edu.upc.karwas.model.entity.Lavado</class>
+		<class>pe.edu.upc.karwas.model.entity.Persona</class>
+		<class>pe.edu.upc.karwas.model.entity.Sucursal</class>
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
 		<properties>
 			<property
