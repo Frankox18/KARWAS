@@ -1,5 +1,10 @@
 Manifest-Version: 1.0
+<<<<<<< HEAD
 Built-By: Franco
 Build-Jdk: 1.8.0_251
+=======
+Built-By: Juan Cￃﾡrdenas
+Build-Jdk: 1.8.0_241
+>>>>>>> origin/JuanC
 Created-By: Maven Integration for Eclipse
 
