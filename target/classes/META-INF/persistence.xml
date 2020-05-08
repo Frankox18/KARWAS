@@ -6,11 +6,13 @@
 
 	<persistence-unit name="KarwasPU" transaction-type="JTA">
 		<jta-data-source>java:/KarwasDS</jta-data-source>
+		<class>pe.edu.upc.karwas.model.entity.Person</class>
+		<class>pe.edu.upc.karwas.model.entity.Employee</class>
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
 		<properties>
 			<property
 				name="javax.persistence.schema-generation.database.action"
-				value="create-drop" />
+				value="none" />
 		</properties>
 	</persistence-unit>
 </persistence>
