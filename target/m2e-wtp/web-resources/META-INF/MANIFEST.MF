@@ -1,5 +1,10 @@
 Manifest-Version: 1.0
+<<<<<<< HEAD
 Built-By: Juan Cￃﾡrdenas
 Build-Jdk: 1.8.0_241
+=======
+Built-By: ASUS
+Build-Jdk: 1.8.0_221
+>>>>>>> origin/Sheyla
 Created-By: Maven Integration for Eclipse
 

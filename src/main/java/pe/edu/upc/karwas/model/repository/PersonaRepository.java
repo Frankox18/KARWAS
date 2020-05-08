@@ -1,5 +1,11 @@
 package pe.edu.upc.karwas.model.repository;
 
-public interface PersonaRepository {
+import java.util.List;
 
+
+import pe.edu.upc.karwas.model.entity.Persona;
+
+public interface PersonaRepository extends JpaRepository<Persona, Integer> {
+List<Persona>findByApellido(String apellido) throws Exception;
+List<Persona>findByDni(String dni) throws Exception;
 }
