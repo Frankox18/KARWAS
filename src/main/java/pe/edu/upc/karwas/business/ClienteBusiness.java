@@ -1,5 +1,7 @@
 package pe.edu.upc.karwas.business;
 
-public interface ClienteBusiness {
+import pe.edu.upc.karwas.model.entity.Cliente;
+
+public interface ClienteBusiness extends CrudBusiness<Cliente, Integer> {
 
 }
