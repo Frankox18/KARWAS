@@ -20,7 +20,7 @@
 		<properties>
 			<property
 				name="javax.persistence.schema-generation.database.action"
-				value="create-drop" />
+				value="none" />
 		</properties>
 	</persistence-unit>
 </persistence>
