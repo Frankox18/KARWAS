@@ -6,11 +6,23 @@
 
 	<persistence-unit name="KarwasPU" transaction-type="JTA">
 		<jta-data-source>java:/</jta-data-source>
+		<jta-data-source>java:/KarwasDS</jta-data-source>
+		<class>pe.edu.upc.karwas.model.entity.Anuncio</class>
+		<class>pe.edu.upc.karwas.model.entity.Auto</class>
+		<class>pe.edu.upc.karwas.model.entity.Cliente</class>
+		<class>pe.edu.upc.karwas.model.entity.Empleado</class>
+		<class>pe.edu.upc.karwas.model.entity.Empresa</class>
+		<class>pe.edu.upc.karwas.model.entity.Lavado</class>
+		<class>pe.edu.upc.karwas.model.entity.Persona</class>
+		<class>pe.edu.upc.karwas.model.entity.Rol</class>
+		<class>pe.edu.upc.karwas.model.entity.Sucursal</class>
+		<class>pe.edu.upc.karwas.model.entity.Usuario</class>
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
 		<properties>
 			<property
 				name="javax.persistence.schema-generation.database.action"
 				value="create-drop" />
+				value="none" />
 		</properties>
 	</persistence-unit>
 </persistence>
