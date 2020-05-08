@@ -53,11 +53,11 @@ public class PersonaBusinessImpl implements PersonaBusiness, Serializable {
 	@Override
 	public List<Persona> readByApellido(String apellido) throws Exception {
 		// TODO Auto-generated method stub
-		return personaRepository.findByDni(apellido);
+		return personaRepository.findByApellido(apellido);
 	}
 
 	@Override
-	public List<Persona> readByDni(String dni) throws Exception {
+	public List<Persona> readByDni(Integer dni) throws Exception {
 		// TODO Auto-generated method stub
 		return personaRepository.findByDni(dni);
 	}

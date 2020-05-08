@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>CRUD Personas</title>
+</h:head>
+<h:body>
+<h:form id="frmPersonas">
+
+<p:panelGrid id="panPersona" columns="6">
+	    <p:outputLabel for="txtDni" value="DNI :" />
+	    <p:inputText id="txtDni" value="#{personaController.persona.dni}" />
+	 
+	    <p:outputLabel for="txtNombres" value="Nombres :" />
+	    <p:inputText id="txtNombres" value="#{personaController.persona.nombre}" />
+	 
+	    <p:outputLabel for="txtApellidos" value="Apellidos :" />
+	    <p:inputText id="txtApellidos" value="#{personaController.persona.apellido}" />
+	    
+	    <p:outputLabel for="txtNumeroTelefono" value="Telefono :" />
+	    <p:inputText id="txtNumeroTelefono" value="#{personaController.persona.numeroTelefono}" />
+	    
+	    <p:outputLabel for="selDistrito" value="Distrito :" />
+	    <p:selectOneMenu id="selDistrito" value="#{personaController.persona.distrito}">
+	        <f:selectItem itemLabel="Chorrillos" itemValue="Chorrillos" />
+	        <f:selectItem itemLabel="Barranco" itemValue="Barranco" />
+	        <f:selectItem itemLabel="Surco" itemValue="Surco" />
+	        <f:selectItem itemLabel="Villa" itemValue="Villa" />
+	    </p:selectOneMenu>
+	    
+	        <p:outputLabel for="txtDireccion" value="Direccion :" />
+	    <p:inputText id="txtDireccion" value="#{personaController.persona.direccion}" />
+	    
+	    
+	</p:panelGrid>
+
+
+<p:dataTable id="dtPersona" value="#{personaController.personas}" var="persona" 
+			emptyMessage="No exite datos" rowKey="#{persona.id}"
+			paginator="true" rows="3" selectionMode="simple">
+		<f:facet name="header">
+			<p:outputLabel>Lista de Personas</p:outputLabel>
+		</f:facet>
+		<p:ajax event="rowSelect" listener="#{personaController.selectPersona}" />
+		
+		<p:column headerText="Id">
+			<h:outputText value="#{persona.id}" />
+		</p:column>
+				<p:column headerText="Dni">
+			<h:outputText value="#{persona.dni}" />
+		</p:column>
+		
+		<p:column headerText="nombre">
+			<h:outputText value="#{persona.nombre}" />
+		</p:column>
+		<p:column headerText="apellido">
+			<h:outputText value="#{persona.apellido}" />
+		</p:column>		
+		<p:column headerText="Numero de telefono">
+			<h:outputText value="#{persona.numeroTelefono}" />
+		</p:column>
+		<p:column headerText="Distrito">
+			<h:outputText value="#{persona.distrito}" />
+		</p:column>
+		<p:column headerText="Direccion">
+			<h:outputText value="#{persona.direccion}" />
+		</p:column>
+		
+	</p:dataTable>
+<p:toolbar>
+		<f:facet name="left">
+			<p:commandButton value="Nuevo" icon="pi pi-file" 
+				actionListener="#{personaController.resetForm()}" update="@form" />
+				
+			<p:commandButton value="Editar" icon="pi pi-pencil" 
+				process="@this" 
+				actionListener="#{personaController.editPersona()}"
+				update=":frmPersonas:panPersona"/>
+			
+			<p:commandButton value="Guardar" icon="pi pi-save"
+				process="@this :frmPersonas:panPersona" 
+				actionListener="#{personaController.savePersona()}" 
+				update=":frmPersonas:panPersona :frmPersonas:dtPersona" ajax="false" />
+		</f:facet>
+	</p:toolbar>
+
+
+</h:form>
+</h:body>
+</html>

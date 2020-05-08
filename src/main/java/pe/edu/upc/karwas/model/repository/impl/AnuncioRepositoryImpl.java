@@ -18,18 +18,18 @@ public class AnuncioRepositoryImpl implements AnuncioRepository,Serializable {
 	private EntityManager em;
 	@Override
 	public Integer insert(Anuncio t) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		em.persist(t);
+		return t.getId();
 	}
 	@Override
 	public Integer update(Anuncio t) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		em.merge(t);
+		return t.getId();
 	}
 	@Override
 	public Integer delete(Anuncio t) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		em.merge(t);
+		return t.getId();
 	}
 	@Override
 	public List<Anuncio> findAll() throws Exception {

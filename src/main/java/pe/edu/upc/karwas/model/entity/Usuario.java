@@ -2,12 +2,9 @@ package pe.edu.upc.karwas.model.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -24,13 +21,6 @@ public class Usuario {
     @Column(name = "contraseña", length = 30, nullable = false)
     private String contraseña;
 	
-	@OneToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "rol_id")
-	private Rol rol;
-	
-	@OneToOne(mappedBy = "usuario")
-	private Persona persona;
-
 	public Integer getId() {
 		return id;
 	}
@@ -55,19 +45,4 @@ public class Usuario {
 		this.contraseña = contraseña;
 	}
 
-	public Rol getRol() {
-		return rol;
-	}
-
-	public void setRol(Rol rol) {
-		this.rol = rol;
-	}
-
-	public Persona getPersona() {
-		return persona;
-	}
-
-	public void setPersona(Persona persona) {
-		this.persona = persona;
-	}
 }

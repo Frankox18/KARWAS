@@ -2,14 +2,11 @@ package pe.edu.upc.karwas.model.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -37,10 +34,6 @@ public class Persona {
 	
 	@Column(name="direccion", length=40, nullable=false)
 	private String direccion;
-	
-	@OneToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "usuario_id")
-	private Usuario usuario;
 
 	public Integer getId() {
 		return id;
