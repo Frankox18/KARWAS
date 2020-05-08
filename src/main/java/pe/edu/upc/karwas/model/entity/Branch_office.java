@@ -8,8 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="adverts")
-public class Advert {
+@Table(name="branch_office")
+public class Branch_office {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,11 +18,11 @@ public class Advert {
 	@Column(name = "id_company", length = 6, nullable = false)
 	private Integer id_company;
 	
-	@Column(name = "service_price", length = 15, nullable = false)
-	private Integer service_price;
+	@Column(name = "district", length = 15, nullable = false)
+	private String district;
 	
-	@Column(name = "advert_time", length = 15, nullable = false)
-	private Integer advert_time;
+	@Column(name = "direction", length = 15, nullable = false)
+	private String direction;
 
 	public Integer getId() {
 		return id;
@@ -40,22 +40,21 @@ public class Advert {
 		this.id_company = id_company;
 	}
 
-	public Integer getService_price() {
-		return service_price;
+	public String getDistrict() {
+		return district;
 	}
 
-	public void setService_price(Integer service_price) {
-		this.service_price = service_price;
+	public void setDistrict(String district) {
+		this.district = district;
 	}
 
-	public Integer getAdvert_time() {
-		return advert_time;
+	public String getDirection() {
+		return direction;
 	}
 
-	public void setAdvert_time(Integer advert_time) {
-		this.advert_time = advert_time;
+	public void setDirection(String direction) {
+		this.direction = direction;
 	}
 	
 	
-
 }

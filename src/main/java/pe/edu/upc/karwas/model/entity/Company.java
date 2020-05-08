@@ -8,18 +8,18 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="adverts")
-public class Advert {
+@Table(name="companies")
+public class Company {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
-	@Column(name = "id_company", length = 6, nullable = false)
-	private Integer id_company;
+	@Column(name = "name", length = 6, nullable = false)
+	private String name;
 	
-	@Column(name = "service_price", length = 15, nullable = false)
-	private Integer service_price;
+	@Column(name = "ruc", length = 15, nullable = false)
+	private Integer ruc;
 	
 	@Column(name = "advert_time", length = 15, nullable = false)
 	private Integer advert_time;
@@ -32,20 +32,20 @@ public class Advert {
 		this.id = id;
 	}
 
-	public Integer getId_company() {
-		return id_company;
+	public String getName() {
+		return name;
 	}
 
-	public void setId_company(Integer id_company) {
-		this.id_company = id_company;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public Integer getService_price() {
-		return service_price;
+	public Integer getRuc() {
+		return ruc;
 	}
 
-	public void setService_price(Integer service_price) {
-		this.service_price = service_price;
+	public void setRuc(Integer ruc) {
+		this.ruc = ruc;
 	}
 
 	public Integer getAdvert_time() {
@@ -57,5 +57,4 @@ public class Advert {
 	}
 	
 	
-
 }
