@@ -46,7 +46,7 @@ public class PersonaController implements Serializable {
 	}
 	public void savePersona() {
 		try {
-			if(persona.getId()>0)
+			if(persona.getDni()>0)
 				personaBusiness.update(persona);
 			else
 				personaBusiness.create(persona);
