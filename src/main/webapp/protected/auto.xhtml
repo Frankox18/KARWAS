@@ -24,6 +24,9 @@
 	    <p:outputLabel for="txtNumeroTelefono" value="Telefono :" />
 	    <p:inputText id="txtNumeroTelefono" value="#{personaController.persona.numeroTelefono}" />
 	    
+	     <p:outputLabel for="txtDireccion" value="Direccion :" />
+	    <p:inputText id="txtDireccion" value="#{personaController.persona.direccion}" />
+	    
 	    <p:outputLabel for="selDistrito" value="Distrito :" />
 	    <p:selectOneMenu id="selDistrito" value="#{personaController.persona.distrito}">
 	        <f:selectItem itemLabel="Chorrillos" itemValue="Chorrillos" />
@@ -32,8 +35,12 @@
 	        <f:selectItem itemLabel="Villa" itemValue="Villa" />
 	    </p:selectOneMenu>
 	    
-	        <p:outputLabel for="txtDireccion" value="Direccion :" />
-	    <p:inputText id="txtDireccion" value="#{personaController.persona.direccion}" />
+	    
+	    
+	    
+	    
+	    
+	       
 	    
 	    
 	</p:panelGrid>
@@ -84,7 +91,7 @@
 			<p:commandButton value="Guardar" icon="pi pi-save"
 				process="@this :frmPersonas:panPersona" 
 				actionListener="#{personaController.savePersona()}" 
-				update=":frmPersonas:panPersona :frmPersonas:dtPersona" ajax="false" />
+				update=":frmPersona:panPersona :frmPersona:dtPersona" ajax="false" />
 		</f:facet>
 	</p:toolbar>
 
